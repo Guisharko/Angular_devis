@@ -1,0 +1,26 @@
+<app-template-b
+title="Interventions"
+label="Liste des intenventions">
+
+  <input [(ngModel)]="filterName" placeholder="Saisir un nom" class="form-control mt-2 mb-2">
+<app-tableau
+[headers]="clientHeaders">
+
+  <tr *ngFor="let client of collection$ | async">
+    <td> {{ client.nom}} </td>
+    <td> {{ client.adresse}} </td>
+    <td> {{ client.ville}} </td>
+    <td> {{ client.telephone }} </td>
+    <td> {{ client.mail }} </td>
+    <td>
+      <button (click)="edit(client)">Modifier</button>
+      <button (click)="delete(client)">Supprimer</button>
+    </td>
+
+
+  </tr>
+
+</app-tableau>
+
+
+</app-template-b>

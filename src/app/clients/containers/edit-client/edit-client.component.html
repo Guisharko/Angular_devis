@@ -1,0 +1,4 @@
+<ng-container *ngIf="client$ | async as client">
+    <app-form-client [initClient]="client" (submitedForm)="editClient($event)">
+       </app-form-client>
+</ng-container>

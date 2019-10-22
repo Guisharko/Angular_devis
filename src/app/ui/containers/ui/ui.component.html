@@ -1,0 +1,27 @@
+<header class="fixed-top">
+  <app-header ></app-header>
+</header>
+
+
+<main [ngClass]="{'close-aside': !(status$ | async)}" >
+  <div class="position-fixed shadow"
+  (click)="toggle()"></div>
+
+  <aside>
+    <div class="scroller">
+      <app-nav></app-nav>
+    </div>
+  </aside>
+
+  <div class="page">
+    <div class="contents">
+      <router-outlet></router-outlet>
+    </div>
+
+    <footer>
+      <app-footer></app-footer>
+    </footer>
+
+  </div>
+
+</main>
