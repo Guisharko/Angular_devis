@@ -1,0 +1,25 @@
+<div class="container">toto
+    <form (ngSubmit)="register()" [formGroup]="myForm">
+
+        <!--<div class="form-group">-->
+            <!--<label>Client</label>-->
+            <!--<input type="text" formControlName="client"-->
+                   <!--placeholder="Veuillez saisir un client" class="form-control">-->
+        <!--</div>-->
+
+        <div class="form-group">
+            <label>Description</label>
+            <input type="text" formControlName="description" class="form-control">
+        </div>
+
+        <!--<div class="form-group">-->
+            <!--<label>Devis</label>-->
+            <!--<input type="text" formControlName="devis" class="form-control">-->
+        <!--</div>-->
+
+
+        <button class="btn btn-success" type="submit" [disabled]="myForm.invalid"> Valider</button>
+    </form>
+
+
+</div>
