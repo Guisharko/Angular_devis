@@ -8,6 +8,7 @@ import {ListClientsComponent} from './containers/list-client/list-client.compone
 import {AddClientComponent} from './containers/add-client/add-client.component';
 import {EditClientComponent} from './containers/edit-client/edit-client.component';
 import {FormClientComponent} from './components/form-client/form-client.component';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 
 
@@ -19,7 +20,8 @@ import {FormClientComponent} from './components/form-client/form-client.componen
     TemplatesModule,
     SharedModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgbModule
   ]
 })
 export class ClientsModule { }

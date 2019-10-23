@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { FormBuilder, Validators, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { Intervention } from 'src/app/shared/models/intervention';
 
 @Component({
@@ -21,12 +21,9 @@ export class FormInterventionComponent implements OnInit {
 
   createForm() {
     this.myForm = this.fb.group({
-      nom: [this.initIntervention.nom, Validators.compose([Validators.required])],
-      prenom: [this.initIntervention.prenom],
-      adresse: [this.initIntervention.adresse,],
-      ville: [this.initIntervention.ville, Validators.required],
-      telephone: [this.initIntervention.telephone, Validators.required],
-      mail: [this.initIntervention.mail]
+      description: [this.initIntervention.description],
+      client: [this.initIntervention.client],
+      devis: [this.initIntervention.devis,],
     })
   }
 

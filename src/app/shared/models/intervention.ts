@@ -1,13 +1,11 @@
 import {InterventionI} from '../interfaces/intervention-i';
+import {Client} from './client';
 
 export class Intervention implements InterventionI {
   id: string;
-  nom: string;
-  prenom: string;
-  adresse: string;
-  ville: string;
-  telephone: string;
-  mail: string;
+  client: Client;
+  description: string;
+  devis: object;
 
 
   constructor(fields?: Partial<Intervention>) {

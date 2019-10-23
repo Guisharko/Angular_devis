@@ -13,12 +13,8 @@ import {Router} from '@angular/router';
 export class ListInterventionsComponent implements OnInit {
     collection$: Observable<Intervention[]>;
     interventionHeaders =
-        ['Nom',
-            'Prénom',
-            'Adresse',
-            'Ville',
-            'Téléphone',
-            'Email',
+        [   'Client',
+            'Description',
             'Actions'];
 
     constructor(

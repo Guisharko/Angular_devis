@@ -1,31 +1,35 @@
 <app-template-b
-title="Clients"
-label="Liste des clients">
+        title="Clients"
+        label="Liste des clients">
 
-  <input [(ngModel)]="filterName" placeholder="Saisir un nom" class="form-control mt-2 mb-2">
-<app-tableau
-[headers]="clientHeaders">
+    <input [(ngModel)]="filterName" placeholder="Saisir un nom" class="form-control mt-2 mb-2">
+    <app-tableau
+            [headers]="clientHeaders">
 
-  <tr *ngFor="let client of collection$ | async">
-    <td> {{ client.nom}} </td>
-    <td> {{ client.prenom}} </td>
-    <td> {{ client.adresse}} </td>
-    <td> {{ client.ville}} </td>
-    <td> {{ client.telephone }} </td>
-    <td> {{ client.mail }} </td>
-    <td>
-      <div class="btn-group dropup">
-        <button type="button" class="btn btn-secondary" (click)="edit(client)">Modifier</button>
-        <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        </button>
-        <div class="dropdown-menu">
-          <button class="btn btn-danger dropdown-item" (click)="delete(client)">Supprimer</button>
-        </div>
-      </div>
-    </td>
-  </tr>
+        <tr *ngFor="let client of collection$ | async">
+            <td> {{ client.nom}} </td>
+            <td> {{ client.prenom}} </td>
+            <td> {{ client.adresse}} </td>
+            <td> {{ client.ville}} </td>
+            <td> {{ client.telephone }} </td>
+            <td> {{ client.mail }} </td>
+            <td>
 
-</app-tableau>
+                <div class="btn-group mr-3">
+                    <button type="button" class="btn btn-primary" (click)="edit(client)">Modifier</button>
+                    <div class="btn-group" ngbDropdown role="group" aria-label="Button group with nested dropdown">
+                        <button class="btn btn-danger dropdown-toggle dropdown-toggle-split" ngbDropdownToggle></button>
+                        <div class="dropdown-menu" ngbDropdownMenu>
+                            <button ngbDropdownItem class="btn btn-danger" (click)="delete(client)">
+                                Supprimer
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </td>
+        </tr>
+
+    </app-tableau>
 
 
 </app-template-b>
