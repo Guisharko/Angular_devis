@@ -4,6 +4,7 @@ import {Intervention} from 'src/app/shared/models/intervention';
 import {InterventionsModule} from '../../intervention.module';
 import {Observable} from 'rxjs';
 import {Router} from '@angular/router';
+import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
     selector: 'app-list-intervention',
@@ -19,11 +20,15 @@ export class ListInterventionsComponent implements OnInit {
 
     constructor(
         private interventionService: InterventionService,
-        private router: Router
+        private router: Router,
+        private modalService: NgbModal
     ) {
         this.collection$ = this.interventionService.collection;
     }
-
+  searchText;
+  openSm(content) {
+    this.modalService.open(content, { size: 'sm' });
+  }
     ngOnInit() {
     }
 
