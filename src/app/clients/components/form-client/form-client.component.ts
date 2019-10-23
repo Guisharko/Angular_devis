@@ -22,10 +22,11 @@ export class FormClientComponent implements OnInit {
   createForm() {
     this.myForm = this.fb.group({
       nom: [this.initClient.nom, Validators.compose([Validators.required])],
+      prenom: [this.initClient.prenom],
       adresse: [this.initClient.adresse,],
       ville: [this.initClient.ville, Validators.required],
       telephone: [this.initClient.telephone, Validators.required],
-      mail: [this.initClient.mail, Validators.required]
+      mail: [this.initClient.mail]
     })
   }
 
