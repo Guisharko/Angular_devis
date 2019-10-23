@@ -1,5 +1,5 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 import {TemplatesModule} from '../templates/templates.module';
 import {SharedModule} from '../shared/shared.module';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
@@ -8,12 +8,11 @@ import {ListClientsComponent} from './containers/list-client/list-client.compone
 import {AddClientComponent} from './containers/add-client/add-client.component';
 import {EditClientComponent} from './containers/edit-client/edit-client.component';
 import {FormClientComponent} from './components/form-client/form-client.component';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-
-
+import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {Ng2SearchPipeModule} from 'ng2-search-filter';
 
 @NgModule({
-  declarations: [ListClientsComponent,AddClientComponent,EditClientComponent,FormClientComponent],
+  declarations: [ListClientsComponent, AddClientComponent, EditClientComponent, FormClientComponent],
   imports: [
     CommonModule,
     ClientRoutingModule,
@@ -21,7 +20,10 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     SharedModule,
     FormsModule,
     ReactiveFormsModule,
-    NgbModule
+    NgbModule,
+    Ng2SearchPipeModule,
   ]
+
 })
-export class ClientsModule { }
+export class ClientsModule {
+}

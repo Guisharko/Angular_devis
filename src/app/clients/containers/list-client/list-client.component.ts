@@ -4,38 +4,46 @@ import {Client} from 'src/app/shared/models/client';
 import {ClientsModule} from '../../clients.module';
 import {Observable} from 'rxjs';
 import {Router} from '@angular/router';
+import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
-    selector: 'app-list-client',
-    templateUrl: './list-client.component.html',
-    styleUrls: ['./list-client.component.scss']
+  selector: 'app-list-client',
+  templateUrl: './list-client.component.html',
+  styleUrls: ['./list-client.component.scss']
 })
 export class ListClientsComponent implements OnInit {
-    collection$: Observable<Client[]>;
-    clientHeaders =
-        ['Nom',
-            'Prénom',
-            'Adresse',
-            'Ville',
-            'Téléphone',
-            'Email',
-            'Actions'];
+  collection$: Observable<Client[]>;
+  searchText;
+  clientHeaders =
+    [
+      'Nom',
+      'Prénom',
+      'Adresse',
+      'Ville',
+      'Téléphone',
+      'Email',
+      'Actions'
+    ];
 
-    constructor(
-        private clientService: ClientService,
-        private router: Router
-    ) {
-        this.collection$ = this.clientService.collection;
-    }
+  constructor(
+    private clientService: ClientService,
+    private router: Router,
+    private modalService: NgbModal
+  ) {
+    this.collection$ = this.clientService.collection;
+  }
 
-    ngOnInit() {
-    }
+  ngOnInit() {
+  }
 
-    edit(client: Client) {
-        this.router.navigate(['/clients', 'edit', client.id]);
-    }
+  edit(client: Client) {
+    this.router.navigate(['/clients', 'edit', client.id]);
+  }
 
-    delete(client: Client) {
-        this.clientService.delete(client);
-    }
+  delete(client: Client) {
+    this.clientService.delete(client);
+  }
+  openSm(content) {
+    this.modalService.open(content, { size: 'sm' });
+  }
 }

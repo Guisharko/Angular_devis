@@ -1,35 +1,58 @@
 <app-template-b
-        title="Clients"
-        label="Liste des clients">
-
-    <input [(ngModel)]="filterName" placeholder="Saisir un nom" class="form-control mt-2 mb-2">
-    <app-tableau
-            [headers]="clientHeaders">
-
-        <tr *ngFor="let client of collection$ | async">
-            <td> {{ client.nom}} </td>
-            <td> {{ client.prenom}} </td>
-            <td> {{ client.adresse}} </td>
-            <td> {{ client.ville}} </td>
-            <td> {{ client.telephone }} </td>
-            <td> {{ client.mail }} </td>
-            <td>
-
-                <div class="btn-group mr-3">
-                    <button type="button" class="btn btn-primary" (click)="edit(client)">Modifier</button>
-                    <div class="btn-group" ngbDropdown role="group" aria-label="Button group with nested dropdown">
-                        <button class="btn btn-danger dropdown-toggle dropdown-toggle-split" ngbDropdownToggle></button>
-                        <div class="dropdown-menu" ngbDropdownMenu>
-                            <button ngbDropdownItem class="btn btn-danger" (click)="delete(client)">
-                                Supprimer
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </td>
-        </tr>
-
-    </app-tableau>
+  title="Clients"
+  label="Liste des clients">
 
 
+  <div class="row">
+    <input [(ngModel)]="searchText" placeholder="Rechercher un client (par nom/adresse...)"
+           class="form-control mt-2 mb-2 col-4 offset-1">
+
+    <a [routerLink]="['/clients', 'add']" routerLinkActive="router-link-active" class="offset-3">
+      <button class="btn btn-success">
+        Ajouter un client
+      </button>
+    </a>
+  </div>
+  <app-tableau
+    [headers]="clientHeaders">
+
+    <tr *ngFor="let client of collection$ | async | filter:searchText">
+      <td> {{ client.nom}} </td>
+      <td> {{ client.prenom}} </td>
+      <td> {{ client.adresse}} </td>
+      <td> {{ client.ville}} </td>
+      <td> {{ client.telephone }} </td>
+      <td> {{ client.mail }} </td>
+      <td>
+        <div class="btn-group mr-3">
+          <button type="button" class="btn btn-primary" (click)="edit(client)">Modifier</button>
+          <div class="btn-group" ngbDropdown role="group" aria-label="Button group with nested dropdown">
+            <button class="btn btn-danger dropdown-toggle dropdown-toggle-split" ngbDropdownToggle></button>
+            <div class="dropdown-menu" ngbDropdownMenu>
+              <button ngbDropdownItem class="btn btn-danger" (click)="openSm(content)">
+                Supprimer
+              </button>
+
+            </div>
+          </div>
+        </div>
+      </td>
+      <ng-template #content let-modal>
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Supprimer {{ client.nom}} {{ client.prenom}} ?</h5>
+          <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Cette action est irréversible</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Annuler</button>
+          <button type="button" (click)="delete(client);modal.close('Close click')" class="btn btn-danger">Supprimer</button>
+        </div>
+      </ng-template>
+    </tr>
+
+  </app-tableau>
 </app-template-b>
