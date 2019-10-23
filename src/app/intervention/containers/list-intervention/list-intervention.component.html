@@ -1,0 +1,31 @@
+<app-template-b
+title="Interventions"
+label="Liste des interventions">
+
+  <input [(ngModel)]="filterName" placeholder="Saisir un nom" class="form-control mt-2 mb-2">
+<app-tableau
+[headers]="interventionHeaders">
+
+  <tr *ngFor="let intervention of collection$ | async">
+    <td> {{ intervention.nom}} </td>
+    <td> {{ intervention.prenom}} </td>
+    <td> {{ intervention.adresse}} </td>
+    <td> {{ intervention.ville}} </td>
+    <td> {{ intervention.telephone }} </td>
+    <td> {{ intervention.mail }} </td>
+    <td>
+      <div class="btn-group dropup">
+        <button type="button" class="btn btn-secondary" (click)="edit(intervention)">Modifier</button>
+        <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        </button>
+        <div class="dropdown-menu">
+          <button class="btn btn-danger dropdown-item" (click)="delete(intervention)">Supprimer</button>
+        </div>
+      </div>
+    </td>
+  </tr>
+
+</app-tableau>
+
+
+</app-template-b>
