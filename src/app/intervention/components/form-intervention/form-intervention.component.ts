@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import {Component, OnInit, Input, Output, EventEmitter, Directive} from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Intervention } from 'src/app/shared/models/intervention';
 import {Client} from '../../../shared/models/client';
@@ -10,16 +10,19 @@ import {ClientService} from '../../../clients/services/client.service';
   templateUrl: './form-intervention.component.html',
   styleUrls: ['./form-intervention.component.scss']
 })
+
 export class FormInterventionComponent implements OnInit {
   @Input() initIntervention = new Intervention();
   @Output() submitedForm: EventEmitter<Intervention> = new EventEmitter();
 
-  collection$: Observable<Client[]>;
+  collectionClients$: Observable<Client[]>;
   myForm: FormGroup;
+  id: string;
+
   constructor(
     private fb: FormBuilder,
     private clientService: ClientService) {
-    this.collection$ = this.clientService.collection;
+    this.collectionClients$ = this.clientService.collection;
   }
 
   ngOnInit() {
@@ -41,4 +44,7 @@ export class FormInterventionComponent implements OnInit {
     this.myForm.reset()
   }
 
+  addClient(){
+    console.log(this.clientService.getClient(this.id));
+  }
 }

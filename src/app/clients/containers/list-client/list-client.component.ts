@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ClientService} from '../../services/client.service';
 import {Client} from 'src/app/shared/models/client';
-import {ClientsModule} from '../../clients.module';
 import {Observable} from 'rxjs';
 import {Router} from '@angular/router';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
@@ -13,7 +12,7 @@ import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 })
 export class ListClientsComponent implements OnInit {
   collection$: Observable<Client[]>;
-  searchText;
+  searchText: string;
   clientHeaders =
     [
       'Nom',
