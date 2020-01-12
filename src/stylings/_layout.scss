@@ -24,7 +24,7 @@ $sidenav-min-height: 100vh;
 $sidenav-bg: darken($light-color, 10);
 
 // scroller
-$scroller-max-height: 100vh;
+$scroller-min-height: 100vh;
 $scroller-pdb: $header-height;
 
 // shadow

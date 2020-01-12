@@ -6,13 +6,14 @@ export const environment = {
   production: false,
   urlApi: 'https://jsonplaceholder.typicode.com',
   firebase: {
-    apiKey: "AIzaSyBHTBT8ep8ZtpqB7Q914fGZG-LvngiT_qI",
-    authDomain: "commeonveut.firebaseapp.com",
-    databaseURL: "https://commeonveut.firebaseio.com",
-    projectId: "commeonveut",
-    storageBucket: "commeonveut.appspot.com",
-    messagingSenderId: "773122271960",
-    appId: "1:773122271960:web:526e3029fa0b22df8745ad"
+    apiKey: "AIzaSyAGmGfpxF0WaS-JIxGvqAu8HDr-PUujDD4",
+    authDomain: "generateur-devis.firebaseapp.com",
+    databaseURL: "https://generateur-devis.firebaseio.com",
+    projectId: "generateur-devis",
+    storageBucket: "generateur-devis.appspot.com",
+    messagingSenderId: "241812671108",
+    appId: "1:241812671108:web:460672208e7d59f7b610d1",
+    measurementId: "G-Z4B9ZN2PW7"
   }
 };
 

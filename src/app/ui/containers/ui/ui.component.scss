@@ -33,7 +33,7 @@ aside {
   z-index: 1000;
   .scroller {
     overflow-y: auto;
-    max-height: $scroller-max-height;
+    height: 100vh;
     padding-bottom: $scroller-pdb;
   }
 }

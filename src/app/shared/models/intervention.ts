@@ -1,9 +1,8 @@
 import {InterventionI} from '../interfaces/intervention-i';
-import {Client} from './client';
 
 export class Intervention implements InterventionI {
   id: string;
-  client: Client;
+  client: string;
   description: string;
   devis: object;
 
@@ -13,5 +12,4 @@ export class Intervention implements InterventionI {
       Object.assign(this, fields)
     }
   }
-
 }

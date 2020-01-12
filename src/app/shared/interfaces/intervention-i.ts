@@ -1,8 +1,6 @@
-import {Client} from '../models/client';
-
 export interface InterventionI {
   id: string;
-  client: Client;
+  client: string;
   description: string;
   devis: object;
 

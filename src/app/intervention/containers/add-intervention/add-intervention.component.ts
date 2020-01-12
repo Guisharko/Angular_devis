@@ -14,8 +14,6 @@ export class AddInterventionComponent implements OnInit {
   constructor(
     private interventionService: InterventionService,
     private router: Router
-
-
     ) { }
 
   ngOnInit() {
@@ -24,7 +22,7 @@ export class AddInterventionComponent implements OnInit {
   addIntervention(event: Intervention) {
       this.interventionService.add(event).then( () => {
         this.router.navigate(['/interventions', 'list'])
-      })
+      });
   }
 
 }

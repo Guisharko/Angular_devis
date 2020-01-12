@@ -6,9 +6,9 @@ label="Liste des interventions">
     <input [(ngModel)]="searchText" placeholder="Rechercher une intervention"
            class="form-control mt-2 mb-2 col-4 offset-1">
 
-    <a [routerLink]="['/clients', 'add']" routerLinkActive="router-link-active" class="offset-3">
+    <a [routerLink]="['/interventions', 'add']" routerLinkActive="router-link-active" class="offset-3">
       <button class="btn btn-success">
-        Ajouter un client
+        Ajouter une intervention
       </button>
     </a>
   </div>
@@ -16,7 +16,7 @@ label="Liste des interventions">
 [headers]="interventionHeaders">
 
   <tr *ngFor="let intervention of collection$ | async | filter:searchText">
-    <td> {{ intervention.client}} </td>
+    <td> {{ getName(intervention.client)}} </td>
     <td> {{ intervention.description}} </td>
     <td>
       <div class="btn-group mr-3">

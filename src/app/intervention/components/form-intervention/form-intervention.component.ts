@@ -35,16 +35,16 @@ export class FormInterventionComponent implements OnInit {
       description: [this.initIntervention.description],
       client: [this.initIntervention.client],
       devis: [this.initIntervention.devis],
-    })
+    });
   }
 
   register() {
     console.log(this.myForm.value)
     this.submitedForm.emit(this.myForm.value);
-    this.myForm.reset()
+    this.myForm.reset();
   }
 
-  addClient(){
-    console.log(this.clientService.getClient(this.id));
+  addClient(id) {
+    console.log(this.clientService.getClient(id));
   }
 }

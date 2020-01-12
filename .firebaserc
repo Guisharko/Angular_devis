@@ -1,14 +1,5 @@
 {
   "projects": {
-    "default": "crm-nantes44"
-  },
-  "targets": {
-    "crm-nantes44": {
-      "hosting": {
-        "crm": [
-          "crm-nantes44"
-        ]
-      }
-    }
+    "default": "generateur-devis"
   }
 }

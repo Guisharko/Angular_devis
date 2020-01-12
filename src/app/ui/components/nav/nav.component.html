@@ -1,15 +1,11 @@
-<ul>
-    <li>
-        <a [routerLink]="['/interventions', 'list']" routerLinkActive="router-link-active">Interventions</a>
-    </li>
-  <li>
-    <a [routerLink]="['/interventions', 'add']" routerLinkActive="router-link-active">Ajouter une Intervention</a>
-  </li>
-    <li>
-        <a [routerLink]="['/clients', 'list']" routerLinkActive="router-link-active">Clients</a>
-    </li>
-
-    <li>
-        <a [routerLink]="['/login']" routerLinkActive="router-link-active">Connexion</a>
-    </li>
-</ul>
+    <ul class="nav flex-column purple-gradient py-4 mb-r font-weight-bold z-depth-1">
+      <li class="nav-item">
+        <a [routerLink]="['/interventions', 'list']" class="nav-link white-text" routerLinkActive="router-link-active">Interventions</a>
+      </li>
+      <li class="nav-item">
+        <a [routerLink]="['/clients', 'list']" class="nav-link white-text" routerLinkActive="router-link-active">Clients</a>
+      </li>
+      <li class="nav-item">
+        <a [routerLink]="['/login']" class="nav-link white-text" routerLinkActive="router-link-active">Connexion</a>
+      </li>
+    </ul>
