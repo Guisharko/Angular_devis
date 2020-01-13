@@ -1,0 +1,68 @@
+<app-template-b
+title="Prestations"
+label="Listes des prestations">
+  <div class="row">
+    <input [(ngModel)]="searchText" placeholder="Rechercher un devis"
+           class="form-control mt-2 mb-2 col-4 offset-1">
+
+    <a [routerLink]="['/prestations', 'add']" routerLinkActive="router-link-active" class="offset-3">
+      <button class="btn btn-success">
+        Ajouter un devis
+      </button>
+    </a>
+  </div>
+<app-tableau
+[headers]="prestationHeaders">
+
+  <tr *ngFor="let presta of collection$ | async">
+    <td> {{ getName(presta.client)}} </td>
+    <td> {{ presta.duree}} </td>
+    <td> {{ presta.tjmHt | currency:'EUR'}} </td>
+    <td> {{ presta | total | currency:'EUR'}} </td>
+    <td> {{ presta | total:'ttc' | currency:'EUR'}} </td>
+    <td> {{ presta.tva}} % </td>
+    <td>
+      <select [(ngModel)]="presta.type"
+      (change)="changeType(presta , $event)"
+      class="form-control">
+        <option  *ngFor="let type of typesPrestations"
+        [value]="type" >{{ type }}
+      </option>
+      </select>
+
+
+    </td>
+    <td> {{ presta.status}} </td>
+    <td>
+      <div class="btn-group mr-3">
+        <button type="button" class="btn btn-primary" (click)="edit(presta)">Modifier</button>
+        <div class="btn-group" ngbDropdown role="group" aria-label="Button group with nested dropdown">
+          <button class="btn btn-danger dropdown-toggle dropdown-toggle-split" ngbDropdownToggle></button>
+          <div class="dropdown-menu" ngbDropdownMenu>
+            <button ngbDropdownItem class="btn btn-danger" (click)="openSm(content)">
+              Supprimer
+            </button>
+          </div>
+        </div>
+      </div>
+    </td>
+    <ng-template #content let-modal>
+      <div class="modal-header">
+        <h5 class="modal-title">Supprimer ?</h5>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Cette action est irréversible</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Annuler</button>
+        <button type="button" (click)="delete(presta);modal.close('Close click')" class="btn btn-danger">Supprimer</button>
+      </div>
+    </ng-template>
+  </tr>
+
+</app-tableau>
+
+</app-template-b>

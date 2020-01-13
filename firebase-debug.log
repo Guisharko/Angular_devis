@@ -1,0 +1,39 @@
+[debug] [2020-01-12T15:04:55.728Z] ----------------------------------------------------------------------
+[debug] [2020-01-12T15:04:55.731Z] Command:       D:\node\node.exe D:\Web_Project\angular_devis\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2020-01-12T15:04:55.731Z] CLI Version:   6.12.0
+[debug] [2020-01-12T15:04:55.731Z] Platform:      win32
+[debug] [2020-01-12T15:04:55.731Z] Node Version:  v10.16.3
+[debug] [2020-01-12T15:04:55.732Z] Time:          Sun Jan 12 2020 16:04:55 GMT+0100 (GMT+01:00)
+[debug] [2020-01-12T15:04:55.732Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2020-01-12T15:04:55.740Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-01-12T15:04:55.741Z] > authorizing via signed-in user
+[debug] [2020-01-12T15:04:55.741Z] [iam] checking project generateur-devis for permissions ["firebase.projects.get"]
+[debug] [2020-01-12T15:04:55.742Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2020-01-12T15:04:55.742Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2020-01-12T15:04:55.884Z] <<< HTTP RESPONSE 200
+[debug] [2020-01-12T15:04:55.891Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/generateur-devis:testIamPermissions  
+
+[debug] [2020-01-12T15:04:56.625Z] <<< HTTP RESPONSE 200
+[debug] [2020-01-12T15:04:56.626Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/generateur-devis  
+ 
+[debug] [2020-01-12T15:04:57.335Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'D:\Web_Project\angular_devis'...
+[info] 
+[warn] !  Your requested "node" version "8" doesn't match your global version "10"
+[debug] [2020-01-12T15:04:57.341Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/241812671108/clients/_:getWebAppConfig  
+ 
+[debug] [2020-01-12T15:04:57.341Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/241812671108:getServerAppConfig  
+ 
+[debug] [2020-01-12T15:04:57.624Z] <<< HTTP RESPONSE 200
+[info] +  functions: Emulator started at http://localhost:5001
+[debug] [2020-01-12T15:04:57.996Z] <<< HTTP RESPONSE 200
+[info] i  functions: Watching "D:\Web_Project\angular_devis\functions" for Cloud Functions...
+[info] i  hosting: Serving hosting files from: dist/crm
+[info] +  hosting: Local server: http://localhost:5000
+[debug] [2020-01-12T15:04:58.377Z] Functions runtime initialized.
+[debug] [2020-01-12T15:04:58.377Z] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"protect_env":true,"admin_stubs":true}
+[warn] !  The Cloud Functions emulator requires the module "firebase-functions-test" to be installed as a development dependency. To fix this, run "npm install --save-dev firebase-functions-test" in your functions directory.
+[info] i  functions: Your functions could not be parsed due to an issue with your node_modules (see above)

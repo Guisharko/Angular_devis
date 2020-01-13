@@ -6,7 +6,6 @@ import {Router} from '@angular/router';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import {Client} from '../../../shared/models/client';
 import {ClientService} from '../../../clients/services/client.service';
-import getPrototypeOf = Reflect.getPrototypeOf;
 
 @Component({
   selector: 'app-list-intervention',

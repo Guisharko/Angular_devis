@@ -1,4 +1,4 @@
-<div class="container">toto
+<div class="container">
     <form (ngSubmit)="register()" [formGroup]="myForm">
 
         <div class="form-group">
@@ -6,6 +6,7 @@
             <input type="text" formControlName="description" class="form-control">
         </div>
       <div>
+        <div class="form-group">
 
         <select [(ngModel)]="id" formControlName="client" class="form-control">
           <option value="" disabled selected>Choisir un client</option>
@@ -13,6 +14,7 @@
             {{ client.nom }}
           </option>
         </select>
+        </div>
       </div>
 
         <button class="btn btn-success" type="submit" [disabled]="myForm.invalid"> Valider</button>

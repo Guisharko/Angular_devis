@@ -16,14 +16,12 @@ export class ListClientsComponent implements OnInit {
   clientHeaders =
     [
       'Nom',
-      'Prénom',
       'Adresse',
       'Ville',
       'Téléphone',
       'Email',
       'Actions'
     ];
-
   constructor(
     private clientService: ClientService,
     private router: Router,

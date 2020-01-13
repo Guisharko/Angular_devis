@@ -1,4 +1,9 @@
-<ng-container *ngIf="intervention$ | async as intervention">
+<app-template-a
+  title="Interventions"
+  label="Modifier l'intervention">
+  <ng-container *ngIf="intervention$ | async as intervention">
     <app-form-intervention [initIntervention]="intervention" (submitedForm)="editIntervention($event)">
-       </app-form-intervention>
-</ng-container>
+    </app-form-intervention>
+  </ng-container>
+</app-template-a>
+

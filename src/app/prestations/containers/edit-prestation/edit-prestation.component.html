@@ -1,0 +1,8 @@
+<app-template-b
+  title="Prestations"
+  label="Modifier la prestation">
+  <ng-container *ngIf="presta$ | async as presta">
+    <app-form-prestation [initPresta]="presta" (submitedForm)="editPrestation($event)">
+    </app-form-prestation>
+  </ng-container>
+</app-template-b>

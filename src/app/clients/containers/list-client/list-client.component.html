@@ -5,9 +5,9 @@
 
   <div class="row">
     <input [(ngModel)]="searchText" placeholder="Rechercher un client (par nom/adresse...)"
-           class="form-control mt-2 mb-2 col-4 offset-1">
+           class="form-control mt-2 mb-2 col-md-4 offset-md-1 col-sm-12">
 
-    <a [routerLink]="['/clients', 'add']" routerLinkActive="router-link-active" class="offset-3">
+    <a [routerLink]="['/clients', 'add']" routerLinkActive="router-link-active" class="col-md-4 offset-md-1 col-sm-12">
       <button class="btn btn-success">
         Ajouter un client
       </button>
@@ -17,8 +17,7 @@
     [headers]="clientHeaders">
 
     <tr *ngFor="let client of collection$ | async | filter:searchText">
-      <td> {{ client.nom}} </td>
-      <td> {{ client.prenom}} </td>
+      <td> {{ client.nom}} {{ client.prenom}}</td>
       <td> {{ client.adresse}} </td>
       <td> {{ client.ville}} </td>
       <td> {{ client.telephone }} </td>

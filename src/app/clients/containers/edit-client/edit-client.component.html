@@ -1,4 +1,9 @@
-<ng-container *ngIf="client$ | async as client">
+
+<app-template-b
+  title="Clients"
+  label="Modifier les informations du client">
+  <ng-container *ngIf="client$ | async as client">
     <app-form-client [initClient]="client" (submitedForm)="editClient($event)">
-       </app-form-client>
-</ng-container>
+    </app-form-client>
+  </ng-container>
+</app-template-b>
